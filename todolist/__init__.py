@@ -1,23 +1,20 @@
-from typing import Optional
-import typer
-from todolist import __app_name__ , __version__
-app = typer.Typer()
-def _version_callback(value:bool) -> None:
-    if value:
-        typer.echo(f"{__app_name__} v {__version__}")
-        raise typer.Exit()
-    
-@app.callback()
+__app_name__ = "rptodo"
+__version__ = "0.1.0"
 
-def main(
-    version: Optional[bool]= typer.Option(
-        None,
-        "--vsersion",
-        "-v",
-        help="show the application's version and exit",
-        callback=_version_callback,
-        is_eager=True,
-    )
+(
+    SUCCESS,
+    DIR_ERROR,
+    FILE_ERROR,
+    DB_READ_ERROR,
+    DB_WRITE_ERROR,
+    JSON_ERROR,
+    ID_ERROR,
+) = range(7)
 
-) -> None:
-    return
+ERRORS = {
+    DIR_ERROR: "config directory error",
+    FILE_ERROR: "config file error",
+    DB_READ_ERROR: "database read error",
+    DB_WRITE_ERROR: "database write error",
+    ID_ERROR: "to-do id error",
+}
