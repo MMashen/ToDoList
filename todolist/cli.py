@@ -12,7 +12,7 @@ def _version_callback(value:bool) -> None:
 def main(
     version: Optional[bool]= typer.Option(
         None,
-        "--vsersion",
+        "--version",
         "-v",
         help="show the application's version and exit",
         callback=_version_callback,
