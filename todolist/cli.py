@@ -6,7 +6,7 @@ from todolist import ERRORS,__app_name__,__version__,config,database
 
 import typer
 
-from todolist import (
+from todolist impor1t (
     __app_name__ ,
     __version__,
     ERRORS,
